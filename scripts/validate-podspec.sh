@@ -18,7 +18,7 @@
 
 podspecName="Prelude.podspec"
 repo="AllenSpecs"
-git_tag_exists=false
+git_tag_exists="0"
 
 a=`grep -E 'spec.version.*=' ${podspecName}`
 b=${a#*\'}
@@ -44,7 +44,7 @@ function modify_local_podspec_info() {
 			# 修改readme版本号
 			sed -i  "s/${podspecVersion}/${newVersion}/g" README.md
 			
-			git_tag_exists=true
+			git_tag_exists="1"
 			podspecVersion=$newVersion
 		fi
 }
@@ -75,7 +75,7 @@ function git_updare_tags() {
 		echo "--- Step: push_to_git_remote ---"
 		echo `$pwd`
 		git push origin master:master --tags
-		if test $git_tag_exists -eq true ;then
+		if test $git_tag_exists -eq "1" ;then
 				echo "--- Step: git_tag_exists ---"
 				echo "--- Step: remove_git_tag ---"
 				git tag -d $podspecVersion &git push origin $podspecVersion
@@ -94,7 +94,6 @@ function pod_repo_push() {
 }
 
 
-# EXTRA_FLAGS="--include-podspecs='RxSwift.podspec'"
 argc=$1
 
 echo "----------------------------------"
