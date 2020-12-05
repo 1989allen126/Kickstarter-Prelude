@@ -18,17 +18,16 @@
 
 podspecName="Prelude.podspec"
 repo="AllenSpecs"
-podspecVersion="0.0.1"
 git_tag_exists=false
 a=`grep -E 's.version.*=' ${podspecName}`
 b=${a#*\'}
+podspecVersion=${b%\'*}
 
 set -e
 
 # 1.修改本地podspec版本信息
 function modify_local_podspec_info() {
     echo "--- Step: version_podspec ---"
-		podspecVersion=${b%\'*}
 	
 		echo "--- Step: version_podspec $podspecVersion---"
 		LineNumber=`grep -nE 's.version.*=' ${podspecName} | cut -d : -f1`
@@ -62,6 +61,8 @@ function git_comment_publish() {
 		git add .
 		echo "--- Step: git_commit ---"
 		git commit -m "Bump version to $podspecVersion" 
+		echo "--- Step: push ---"
+		git push origin --tags
 }
 
 # 4.拉取最新代码，更新tag
