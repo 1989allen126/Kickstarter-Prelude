@@ -1127,7 +1127,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Prelude-UIKit-iOSTests/Pods-Prelude-UIKit-iOSTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Prelude-UIKit-iOSTests/Pods-Prelude-UIKit-iOSTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Runes/Runes.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1136,7 +1136,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prelude-UIKit-iOSTests/Pods-Prelude-UIKit-iOSTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Prelude-UIKit-iOSTests/Pods-Prelude-UIKit-iOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		330002B30E25F2387AFEDD7B /* [CP] Check Pods Manifest.lock */ = {
@@ -1235,7 +1235,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Prelude-UIKit-tvOSTests/Pods-Prelude-UIKit-tvOSTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Prelude-UIKit-tvOSTests/Pods-Prelude-UIKit-tvOSTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Runes/Runes.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1244,7 +1244,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prelude-UIKit-tvOSTests/Pods-Prelude-UIKit-tvOSTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Prelude-UIKit-tvOSTests/Pods-Prelude-UIKit-tvOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D66C7FEDBE5DB23F785A6C72 /* [CP] Embed Pods Frameworks */ = {
@@ -1253,7 +1253,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Prelude-iOSTests/Pods-Prelude-iOSTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Prelude-iOSTests/Pods-Prelude-iOSTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Runes/Runes.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1262,7 +1262,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prelude-iOSTests/Pods-Prelude-iOSTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Prelude-iOSTests/Pods-Prelude-iOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DB8A43CB33D896E3F56DCB65 /* [CP] Embed Pods Frameworks */ = {
@@ -1271,7 +1271,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Prelude-tvOSTests/Pods-Prelude-tvOSTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Prelude-tvOSTests/Pods-Prelude-tvOSTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Runes/Runes.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1280,7 +1280,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prelude-tvOSTests/Pods-Prelude-tvOSTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Prelude-tvOSTests/Pods-Prelude-tvOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F41C27D48404895128E9647F /* [CP] Check Pods Manifest.lock */ = {
