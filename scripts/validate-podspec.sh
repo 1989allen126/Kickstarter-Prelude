@@ -19,6 +19,7 @@
 podspecName="Prelude.podspec"
 repo="AllenSpecs"
 git_tag_exists=false
+
 a=`grep -E 's.version.*=' ${podspecName}`
 b=${a#*\'}
 podspecVersion=${b%\'*}
@@ -60,7 +61,7 @@ function git_comment_publish() {
 		echo "--- Step: git_add ---"
 		git add .
 		echo "--- Step: git_commit ---"
-		git commit -m "Bump version to $podspecVersion" 
+		git commit -m "bump version to ${podspecVersion}"
 		echo "--- Step: push ---"
 		git push origin
 }
