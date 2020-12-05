@@ -39,13 +39,15 @@ function modify_local_podspec_info() {
 		
 		#判断提交的tag上面跟podspec是否一致
 		if [[ ${podspecVersion} =~ ${newVersion} ]]; then
-  		# 修改HSBKit.podspec文件中的version为指定值
-			sed -i  "${LineNumber}s/${podspecVersion}/${newVersion}/g" ${podspecName}
-			# 修改readme版本号
-			sed -i  "s/${podspecVersion}/${newVersion}/g" README.md
-			
-			git_tag_exists="1"
-			podspecVersion=$newVersion
+				echo "--- Step: 版本不一致--"
+				
+				# 修改HSBKit.podspec文件中的version为指定值
+				sed -i  "${LineNumber}s/${podspecVersion}/${newVersion}/g" ${podspecName}
+				# 修改readme版本号
+				sed -i  "s/${podspecVersion}/${newVersion}/g" README.md
+				podspecVersion=$newVersion
+		else
+				git_tag_exists="1"
 		fi
 }
 
