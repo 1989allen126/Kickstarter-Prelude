@@ -18,25 +18,7 @@
 
 podspecName="Prelude.podspec"
 repo="AllenSpecs"
-
-a=`grep -E 'spec.version.*=' ${podspecName}`
-b=${a#*\'}
-podspecVersion=${b%\'*}
-
-LineNumber=`grep -nE 'spec.version.*=' ${podspecName} | cut -d : -f1`
-git_rev_list=`git rev-list --tags --max-count=1`
-newVersion=`git describe --tags ${git_rev_list}`
-
-
-#判断提交的tag上面跟podspec是否一致
-if [[ ${podspecVersion} =~ ${newVersion} ]]; then
-		# 修改HSBKit.podspec文件中的version为指定值
-		cmd = `sed -i  "${LineNumber}s/${podspecVersion}/${newVersion}/g" ${podspecName}`
-		
-		# 修改readme版本号
-		sed -i  "s/${podspecVersion}/${newVersion}/g" README.md
-		podspecVersion=${newVersion}
-fi
+podspecVersion=""
 
 set -e
 
@@ -44,7 +26,23 @@ set -e
 function modify_local_podspec_info() {
     echo "--- Step: version_podspec ---"
 
+		a=`grep -E 'spec.version.*=' ${podspecName}`
+		b=${a#*\'}
+		podspecVersion=${b%\'*}
 		
+		LineNumber=`grep -nE 'spec.version.*=' ${podspecName} | cut -d : -f1`
+		git_rev_list=`git rev-list --tags --max-count=1`
+		newVersion=`git describe --tags ${git_rev_list}`
+
+		#判断提交的tag上面跟podspec是否一致
+		if test ${podspecVersion} != ${newVersion} ; then
+				# 修改HSBKit.podspec文件中的version为指定值
+				sed -i "" "${LineNumber}s/${podspecVersion}/${newVersion}/g" ${podspecName}
+				
+				# 修改readme版本号
+				sed -i "" "s/${podspecVersion}/${newVersion}/g" README.md
+				podspecVersion=${newVersion}
+		fi
 		echo "--- Step: version_podspec $newVersion---"
 }
 
@@ -76,9 +74,10 @@ function git_updare_tags() {
 		git push origin master:master --tags
 		
 		git_rev_list=`git rev-list --tags --max-count=1`
-		tag_verson=`git describe --tags ${git_rev_list}`
-		
-		if $podspecVersion == $tag_verson ;then
+		newVersion=`git describe --tags ${git_rev_list}`
+
+		#判断提交的tag上面跟podspec是否一致
+		if test ${podspecVersion} == ${newVersion} ; then
 				echo "--- Step: git_tag_exists ---"
 				echo "--- Step: remove_git_tag ---"
 				git tag -d $podspecVersion&git push origin :$podspecVersion
