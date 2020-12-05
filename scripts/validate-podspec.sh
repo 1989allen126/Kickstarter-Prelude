@@ -14,19 +14,23 @@
 # 5.pod repo push
 ##### 说明 结束  #####
 
+
+
 podspecName="Prelude.podspec"
 repo="AllenSpecs"
 podspecVersion="0.0.1"
 git_tag_exists=false
+a=`grep -E 's.version.*=' ${podspecName}`
+b=${a#*\'}
 
 set -e
 
 # 1.修改本地podspec版本信息
 function modify_local_podspec_info() {
     echo "--- Step: version_podspec ---"
-		a=`grep -E 's.version.*=' ${podspecName}`
-		b=${a#*\'}
 		podspecVersion=${b%\'*}
+	
+		echo "--- Step: version_podspec $podspecVersion---"
 		LineNumber=`grep -nE 's.version.*=' ${podspecName} | cut -d : -f1`
 		
 		#获取最新版本的tag
@@ -100,6 +104,7 @@ case $argc in
     		pod_lib_lint_test
     ;;
 		"make")
+		    modify_local_podspec_info
 				pod_lib_lint_test
 				git_comment_publish
 				git_updare_tags
