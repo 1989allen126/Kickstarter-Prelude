@@ -77,7 +77,7 @@ function git_updare_tags() {
 		newVersion=`git describe --tags ${git_rev_list}`
 
 		#判断提交的tag上面跟podspec是否一致
-		if test ${podspecVersion} == ${newVersion} ; then
+		if test ${podspecVersion} -eq ${newVersion} ; then
 				echo "--- Step: git_tag_exists ---"
 				echo "--- Step: remove_git_tag ---"
 				git tag -d $podspecVersion&git push origin :$podspecVersion
