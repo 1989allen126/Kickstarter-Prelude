@@ -23,7 +23,6 @@ set -e
 
 # 1.修改本地podspec版本信息
 function modify_local_podspec_info() {
-		echo "----------------------------------"
     echo "--- Step: version_podspec ---"
 		a=`grep -E 's.version.*=' ${podspecName}`
 		b=${a#*\'}
@@ -35,7 +34,7 @@ function modify_local_podspec_info() {
 		newVersion=`git describe --tags ${git_rev_list}`
 		
 		#判断提交的tag上面跟podspec是否一致
-		if [[ ${version} =~ ${newVersion} ]]; then
+		if [[ ${podspecVersion} =~ ${newVersion} ]]; then
   		# 修改HSBKit.podspec文件中的version为指定值
 			sed -i  "${LineNumber}s/${podspecVersion}/${newVersion}/g" ${podspecName}
 			# 修改readme版本号
@@ -48,7 +47,6 @@ function modify_local_podspec_info() {
 
 # 2.pod lib lint
 function pod_lib_lint_test() {
-		echo "----------------------------------"
 		echo "--- Step: pod_lib_lint ---"
 		pod lib lint $podspecName  --no-clean --skip-import-validation --allow-warnings
 }
@@ -56,7 +54,6 @@ function pod_lib_lint_test() {
 
 # 3.提交本地修改
 function git_comment_publish() {
-		echo "----------------------------------"
 		echo "--- Step: git_add ---"
 		git add .
 		echo "--- Step: git_commit ---"
@@ -65,7 +62,6 @@ function git_comment_publish() {
 
 # 4.拉取最新代码，更新tag
 function git_updare_tags() {
-		echo "----------------------------------"
 		echo "--- Step: git_pull ---"
 		git pull && git fetch --tags
 		echo "--- Step: push_git_tags ---"
@@ -87,9 +83,8 @@ function git_updare_tags() {
 
 # 5.pod repo push
 function pod_repo_push() {
-		echo "----------------------------------"
 		echo "--- Step: pod_push ---"
-		pod repo push $repo $podspecName --allow-warnings --skip-import-validation
+		#pod repo push $repo $podspecName --allow-warnings --skip-import-validation
 }
 
 
