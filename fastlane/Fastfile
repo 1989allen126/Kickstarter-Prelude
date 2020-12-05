@@ -1,0 +1,79 @@
+desc 'Usage help'
+lane :usage do |options|
+  UI.message("input")
+  UI.message("fastlane release version:{target_version}") 
+  UI.message("or")
+  UI.message("fastlane release tag:{target_version} message:{version_message} repo:AllenSpecs  podspec: HSBNetworking.podspec") 
+end
+
+desc 'Release new version'
+lane :release do |options|
+
+	# tag
+  target_version = options[:tag]
+  # message: 
+  version_message = options[:message]
+  # repo 
+	target_repoName = options[:repo]
+	# podspec
+  target_podspec_name = options[:podspec]
+  
+  if target_repoName.nil?
+		target_repoName = "AllenSpecs"
+  end
+  
+  raise "The version is missed. Use `fastlane release tag:{target_version}`.`"  if target_version.nil?
+
+  version_bump_podspec(
+    path: "#{target_podspec_name}", 
+    version_number: target_version
+  )
+	
+	#   pod lib lint xxx.podspec --allow-warnings
+	#pod_lib_lint(allow_warnings:true)
+	
+	# 
+  git_add(path: ".")
+  # git commit -m "xxx"
+  git_commit(path: ".", message: "Bump version to #{target_version}")
+	
+	# git pull origin master
+	git_pull
+	
+	# git push origin master
+  push_git_tags
+  push_to_git_remote
+  
+  # tag
+	#  git tag -d xxx
+	#  git push origin :xxx
+	
+	if git_tag_exists(tag: target_version)
+    UI.message("remote the existing tag #{target_version} automatically") 
+    remove_git_tag(tagNum: target_version)
+  end
+
+  if version_message.nil?
+    add_git_tag(
+      tag: target_version
+    )
+  else
+    add_git_tag(
+      tag: target_version,
+      message: version_message
+    )
+  end
+	
+	# git push origin --tag
+	push_git_tags
+	
+  # 
+	#  pod repo push release  xxx.podspec --allow-warning
+	# pod_push
+	# pod_repo_push(repo: target_repoName, podspec: "#{target_podspec_name}")
+	pod_push(path: "#{target_podspec_name}", repo: "#{target_repoName}", allow_warnings: true)
+	
+	#  pod trunk push
+	#pod_push(path: "#{target_podspec_name}",allow_warnings: true)
+
+end
