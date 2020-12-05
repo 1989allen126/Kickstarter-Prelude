@@ -62,7 +62,7 @@ function git_comment_publish() {
 		echo "--- Step: git_commit ---"
 		git commit -m "Bump version to $podspecVersion" 
 		echo "--- Step: push ---"
-		git push origin --tags
+		git push origin
 }
 
 # 4.拉取最新代码，更新tag
@@ -72,7 +72,7 @@ function git_updare_tags() {
 		echo "--- Step: push_git_tags ---"
 		git push origin --tags
 		echo "--- Step: push_to_git_remote ---"
-		echo '$pwd'
+		echo `$pwd`
 		git push origin master:master --tags
 		if $git_tag_exists ;then
 				echo "--- Step: git_tag_exists ---"
