@@ -23,26 +23,29 @@ a=`grep -E 'spec.version.*=' ${podspecName}`
 b=${a#*\'}
 podspecVersion=${b%\'*}
 
+LineNumber=`grep -nE 'spec.version.*=' ${podspecName} | cut -d : -f1`
+git_rev_list=`git rev-list --tags --max-count=1`
+newVersion=`git describe --tags ${git_rev_list}`
+
+
+#判断提交的tag上面跟podspec是否一致
+if [[ ${podspecVersion} =~ ${newVersion} ]]; then
+		# 修改HSBKit.podspec文件中的version为指定值
+		cmd = `sed -i  "${LineNumber}s/${podspecVersion}/${newVersion}/g" ${podspecName}`
+		
+		# 修改readme版本号
+		sed -i  "s/${podspecVersion}/${newVersion}/g" README.md
+		podspecVersion=${newVersion}
+fi
+
 set -e
 
 # 1.修改本地podspec版本信息
 function modify_local_podspec_info() {
     echo "--- Step: version_podspec ---"
-	
-		echo "--- Step: version_podspec $podspecVersion---"
-		LineNumber=`grep -nE 's.version.*=' ${podspecName} | cut -d : -f1`
+
 		
-		#获取最新版本的tag
-		git_rev_list=`git rev-list --tags --max-count=1`
-		newVersion=`git describe --tags ${git_rev_list}`
-		
-		#判断提交的tag上面跟podspec是否一致
-		if [[ ${podspecVersion} =~ ${newVersion} ]]; then
-				# 修改HSBKit.podspec文件中的version为指定值
-				sed -i  "${LineNumber}s/${podspecVersion}/${newVersion}/g" ${podspecName}
-				# 修改readme版本号
-				sed -i  "s/${podspecVersion}/${newVersion}/g" README.md
-		fi
+		echo "--- Step: version_podspec $newVersion---"
 }
 
 # 2.pod lib lint
