@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
 		spec.name = 'Prelude'
-		spec.version = '1.1.4'
+		spec.version = '1.1.5'
 		spec.summary = 'Functional operators for Swift'
 		spec.homepage = 'https://github.com/1989allen126/Kickstarter-Prelude'
 		spec.license = { :type => 'MIT', :file => 'LICENSE' }
