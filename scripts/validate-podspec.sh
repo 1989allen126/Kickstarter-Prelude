@@ -81,7 +81,7 @@ function git_updare_tags() {
 		fi
 		
 		echo "--- Step: add_git_tag ---"
-		git tag -am update $podspecVersion
+		git tag -am 'update' $podspecVersion
 		echo "--- Step: push_git_tags ---"
 		git push origin --tags
 }
