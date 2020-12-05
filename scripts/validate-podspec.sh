@@ -20,7 +20,7 @@ podspecName="Prelude.podspec"
 repo="AllenSpecs"
 git_tag_exists=false
 
-a=`grep -E 's.version.*=' ${podspecName}`
+a=`grep -E 'spec.version.*=' ${podspecName}`
 b=${a#*\'}
 podspecVersion=${b%\'*}
 
