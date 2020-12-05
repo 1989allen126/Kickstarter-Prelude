@@ -43,7 +43,6 @@ function modify_local_podspec_info() {
 				sed -i "" "s/${podspecVersion}/${newVersion}/g" README.md
 				podspecVersion=${newVersion}
 		fi
-		echo "--- Step: version_podspec $newVersion---"
 }
 
 # 2.pod lib lint
@@ -64,7 +63,7 @@ function git_comment_publish() {
 }
 
 # 4.拉取最新代码，更新tag
-function git_updare_tags() {
+function git_update_tags() {
 		echo "--- Step: git_pull ---"
 		git pull && git fetch --tags
 		echo "--- Step: push_git_tags ---"
@@ -79,7 +78,7 @@ function git_updare_tags() {
 		echo "--- Step: podspecVersion:${podspecVersion}---"
 		echo "--- Step: newVersion:${newVersion} ---"
 		#判断提交的tag上面跟podspec是否一致
-		if "${podspecVersion}" == "${newVersion}" ; then
+		if test "${podspecVersion}" -eq "${newVersion}" ; then
 				echo "--- Step: git_tag_exists ---"
 				echo "--- Step: remove_git_tag ---"
 				git tag -d $podspecVersion&git push origin :$podspecVersion
@@ -112,7 +111,7 @@ case $argc in
 		    modify_local_podspec_info
 				pod_lib_lint_test
 				git_comment_publish
-				git_updare_tags
+				git_update_tags
 				pod_repo_push
     ;;
 esac
