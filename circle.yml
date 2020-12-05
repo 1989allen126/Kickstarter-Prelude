@@ -4,16 +4,14 @@ version: 2
 jobs:
   build:
     macos:
-      xcode: "11.3.0"
+      xcode: "12.1.0"
     working_directory: ~/Kickstarter-Prelude
     environment:
       CIRCLE_ARTIFACTS: /tmp
 
     steps:
       - checkout
-      - run: git submodule sync --recursive
-      - run: git submodule update --init --recursive
-
+      - run: pod update
       - run: HOMEBREW_NO_AUTO_UPDATE=1 brew install swiftlint
       - run: set -o pipefail &&
              swiftlint lint --strict --reporter json |
