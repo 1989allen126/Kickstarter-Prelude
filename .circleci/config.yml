@@ -1,23 +1,27 @@
-# For a detailed guide to building and testing on iOS, read the docs:
-# https://circleci.com/docs/2.0/testing-ios/
-
-version: 2.1
+# CircleCI version
+version: 2
 
 jobs:
   build:
-
     macos:
-      xcode: 11.0.0 # Specify the Xcode version to use
+      xcode: "12.1.0"
+    working_directory: ~/Kickstarter-Prelude
+    environment:
+      CIRCLE_ARTIFACTS: /tmp
 
     steps:
       - checkout
-      - run: pod install # Install CocoaPods dependencies
-      - run: fastlane scan # Run tests using Fastlane
+      - run: pod update
+      - run: HOMEBREW_NO_AUTO_UPDATE=1 brew install swiftlint
+      - run: set -o pipefail &&
+             swiftlint lint --strict --reporter json |
+             tee $CIRCLE_ARTIFACTS/swiftlint-report.json
+      - run: bin/test iOS 12.4
+      - run: bin/test iOS 13.3
+      - run: bin/test UIKit-iOS 12.4
+      - run: bin/test UIKit-iOS 13.3
 
-      # Collect XML test results data to show in the UI, and save the same XML
-      # files under test-results folder in the Artifacts tab
-      - store_test_results:
-          path: test_output
       - store_artifacts:
-          path: test_output
-          destination: scan-output
+          path: /tmp/swiftlint-report.json
+      - store_artifacts:
+          path: /tmp/xcode_raw.log
