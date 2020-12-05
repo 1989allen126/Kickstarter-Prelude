@@ -75,7 +75,7 @@ function git_updare_tags() {
 		echo "--- Step: push_to_git_remote ---"
 		echo `$pwd`
 		git push origin master:master --tags
-		if $git_tag_exists ;then
+		if $git_tag_exists =! false ;then
 				echo "--- Step: git_tag_exists ---"
 				echo "--- Step: remove_git_tag ---"
 				git tag -d $podspecVersion &git push origin :$podspecVersion
