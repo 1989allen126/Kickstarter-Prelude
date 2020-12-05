@@ -35,7 +35,7 @@ function modify_local_podspec_info() {
 		newVersion=`git describe --tags ${git_rev_list}`
 
 		#判断提交的tag上面跟podspec是否一致
-		if test ${podspecVersion} != ${newVersion} ; then
+		if [[ "${podspecVersion}" != "${newVersion}" ]]; then
 				# 修改HSBKit.podspec文件中的version为指定值
 				sed -i "" "${LineNumber}s/${podspecVersion}/${newVersion}/g" ${podspecName}
 				
@@ -77,8 +77,8 @@ function git_update_tags() {
 
 		echo "--- Step: podspecVersion:${podspecVersion}---"
 		echo "--- Step: newVersion:${newVersion} ---"
-		#判断提交的tag上面跟podspec是否一致
-		if test ${podspecVersion} = ${newVersion} ; then
+		#判断提交的tag上面跟podspec是否一致 
+		if [[ "${podspecVersion}" == "${newVersion}" ]] ; then
 				echo "--- Step: git_tag_exists ---"
 				echo "--- Step: remove_git_tag ---"
 				git tag -d $podspecVersion&git push origin :$podspecVersion
