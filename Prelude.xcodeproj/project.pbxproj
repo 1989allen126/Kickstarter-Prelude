@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		01AFE2C11D58FF6E0094C263 /* UITabBarLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AFE2BF1D58FF680094C263 /* UITabBarLenses.swift */; };
 		01F547EA1D539636000A98EF /* UITabBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F547E81D539629000A98EF /* UITabBarItemLenses.swift */; };
+		18027CFB257B2FFE005B7FBF /* UIBarButtonItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */; };
+		18027D05257B3057005B7FBF /* UIBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */; };
+		18027D0E257B3069005B7FBF /* UINavigationBarLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051B93E1D4049B600F653A7 /* UINavigationBarLenses.swift */; };
+		18027D17257B3078005B7FBF /* UINavigationControllerLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051B9421D4049FB00F653A7 /* UINavigationControllerLenses.swift */; };
+		18027D20257B3082005B7FBF /* UINavigationItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051B9401D4049DD00F653A7 /* UINavigationItemLenses.swift */; };
+		18027D29257B3090005B7FBF /* UITabBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F547E81D539629000A98EF /* UITabBarItemLenses.swift */; };
+		18027D32257B309D005B7FBF /* UITabBarLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AFE2BF1D58FF680094C263 /* UITabBarLenses.swift */; };
 		1844685A2577DCA70080EF36 /* UnpackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7758A83A209B926F0018B96D /* UnpackTests.swift */; };
 		184468A72577DD6D0080EF36 /* LensHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CBAA6C1D69E9DE009D7B48 /* LensHolder.swift */; };
 		184468FB2577E6C00080EF36 /* VectorTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184468F52577E6BF0080EF36 /* VectorTypeTest.swift */; };
@@ -21,7 +28,6 @@
 		5E6D89CCE8FFB3B46D998482 /* Pods_Prelude_UIKit_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2253C099109D5DAD5F5FD4 /* Pods_Prelude_UIKit_tvOSTests.framework */; };
 		6D9D981C22CF6CA9611297DF /* Pods_Prelude_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD8B061EB92EE67ABEA1EF5 /* Pods_Prelude_iOS.framework */; };
 		7758A83B209B926F0018B96D /* UnpackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7758A83A209B926F0018B96D /* UnpackTests.swift */; };
-		8023ED321E9AC7860044504B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8023ED241E9AC7560044504B /* Runes.framework */; };
 		804FA7031D2EF79A001876A7 /* UIBarItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */; };
 		804FA7041D2EF7A2001876A7 /* UIBarButtonItemLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */; };
 		8051B93F1D4049B600F653A7 /* UINavigationBarLenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051B93E1D4049B600F653A7 /* UINavigationBarLenses.swift */; };
@@ -186,69 +192,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8023ED1F1E9AC7560044504B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F802D4D21A5F218E005E236C;
-			remoteInfo = "Runes-iOS";
-		};
-		8023ED211E9AC7560044504B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F86B2E0B1A5F2B8D00C3B8BD;
-			remoteInfo = "Runes-Mac";
-		};
-		8023ED231E9AC7560044504B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 51DE8A121BAB363500124320;
-			remoteInfo = "Runes-tvOS";
-		};
-		8023ED251E9AC7560044504B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8624C261A645A9600C883B3;
-			remoteInfo = "Runes-iOS Tests";
-		};
-		8023ED271E9AC7560044504B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8624C451A645C9500C883B3;
-			remoteInfo = "Runes-Mac Tests";
-		};
-		8023ED291E9AC7560044504B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 51DE8A211BAB36E600124320;
-			remoteInfo = "Runes-tvOS Tests";
-		};
-		8023ED2B1E9AC7560044504B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EAA6A5101B2F154D0058E9A8;
-			remoteInfo = "Runes-watchOS";
-		};
-		8023ED2D1E9AC7660044504B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F802D4D11A5F218E005E236C;
-			remoteInfo = "Runes-iOS";
-		};
-		8023ED2F1E9AC76C0044504B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 51DE8A111BAB363500124320;
-			remoteInfo = "Runes-tvOS";
-		};
 		A70969131D14373400DB39D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA0923EF1BB6291800C9EC88 /* Project object */;
@@ -311,7 +254,6 @@
 		70480F018BF4C10E6FC9E35C /* Pods-Prelude-UIKit-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelude-UIKit-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelude-UIKit-tvOSTests/Pods-Prelude-UIKit-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		7758A83A209B926F0018B96D /* UnpackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnpackTests.swift; sourceTree = "<group>"; };
 		77A100B6CF64A6749869EECC /* Pods-Prelude-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prelude-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prelude-tvOS/Pods-Prelude-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		8023ED151E9AC7560044504B /* Runes.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Runes.xcodeproj; path = Runes/Runes.xcodeproj; sourceTree = "<group>"; };
 		804FA7001D2EF6FC001876A7 /* UIBarButtonItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemLenses.swift; sourceTree = "<group>"; };
 		804FA7021D2EF79A001876A7 /* UIBarItemLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarItemLenses.swift; sourceTree = "<group>"; };
 		8051B93E1D4049B600F653A7 /* UINavigationBarLenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarLenses.swift; sourceTree = "<group>"; };
@@ -473,7 +415,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8023ED321E9AC7860044504B /* Runes.framework in Frameworks */,
 				42738BD655617DA53B6355E1 /* Pods_Prelude_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,7 +475,6 @@
 		8023ED141E9AC72C0044504B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8023ED151E9AC7560044504B /* Runes.xcodeproj */,
 				E8B523E41F3055237A466B75 /* Pods_Prelude_UIKit_iOS.framework */,
 				998BFD08236D2AD2B5E048D1 /* Pods_Prelude_UIKit_iOSTests.framework */,
 				9C432F85915BBDCA41CA3A59 /* Pods_Prelude_UIKit_tvOS.framework */,
@@ -545,20 +485,6 @@
 				851F1E877BECC825CC69C697 /* Pods_Prelude_tvOSTests.framework */,
 			);
 			path = Frameworks;
-			sourceTree = "<group>";
-		};
-		8023ED161E9AC7560044504B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8023ED201E9AC7560044504B /* Runes.framework */,
-				8023ED221E9AC7560044504B /* Runes.framework */,
-				8023ED241E9AC7560044504B /* Runes.framework */,
-				8023ED261E9AC7560044504B /* Runes-iOS Tests.xctest */,
-				8023ED281E9AC7560044504B /* Runes-Mac Tests.xctest */,
-				8023ED2A1E9AC7560044504B /* Runes-tvOS Tests.xctest */,
-				8023ED2C1E9AC7560044504B /* Runes.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A727E0231D0796D600D8FE43 /* Prelude-UIKit */ = {
@@ -833,7 +759,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8023ED2E1E9AC7660044504B /* PBXTargetDependency */,
 			);
 			name = "Prelude-iOS";
 			productName = Prelude;
@@ -873,7 +798,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8023ED301E9AC76C0044504B /* PBXTargetDependency */,
 			);
 			name = "Prelude-tvOS";
 			productName = Prelude;
@@ -953,12 +877,6 @@
 			mainGroup = CA0923EE1BB6291800C9EC88;
 			productRefGroup = CA0923F91BB6291900C9EC88 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 8023ED161E9AC7560044504B /* Products */;
-					ProjectRef = 8023ED151E9AC7560044504B /* Runes.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A7FD084C1C81E1DA00332CCB /* Prelude-iOS */,
@@ -972,58 +890,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		8023ED201E9AC7560044504B /* Runes.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Runes.framework;
-			remoteRef = 8023ED1F1E9AC7560044504B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8023ED221E9AC7560044504B /* Runes.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Runes.framework;
-			remoteRef = 8023ED211E9AC7560044504B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8023ED241E9AC7560044504B /* Runes.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Runes.framework;
-			remoteRef = 8023ED231E9AC7560044504B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8023ED261E9AC7560044504B /* Runes-iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Runes-iOS Tests.xctest";
-			remoteRef = 8023ED251E9AC7560044504B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8023ED281E9AC7560044504B /* Runes-Mac Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Runes-Mac Tests.xctest";
-			remoteRef = 8023ED271E9AC7560044504B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8023ED2A1E9AC7560044504B /* Runes-tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Runes-tvOS Tests.xctest";
-			remoteRef = 8023ED291E9AC7560044504B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8023ED2C1E9AC7560044504B /* Runes.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Runes.framework;
-			remoteRef = 8023ED2B1E9AC7560044504B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A70969061D14373400DB39D3 /* Resources */ = {
@@ -1308,8 +1174,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18027D32257B309D005B7FBF /* UITabBarLenses.swift in Sources */,
 				A70969241D1437B200DB39D3 /* CGPointLenses.swift in Sources */,
 				A7D120241D158A2700F364FD /* UITableViewCellLenses.swift in Sources */,
+				18027CFB257B2FFE005B7FBF /* UIBarButtonItemLenses.swift in Sources */,
 				A747D9391D35654D004B612D /* UIScrollViewLenses.swift in Sources */,
 				A7A882F31D31826F00E9046E /* NSMutableParagraphStyleLenses.swift in Sources */,
 				A7D11FC81D14927400F364FD /* UITableViewLenses.swift in Sources */,
@@ -1329,19 +1197,24 @@
 				A709692D1D1437B200DB39D3 /* UITextInputTraitsLenses.swift in Sources */,
 				D6089DC7208A43590032CC99 /* UISwitchLenses.swift in Sources */,
 				A78011DF1D2DBF090027396E /* UITraitEnvironment.swift in Sources */,
+				18027D29257B3090005B7FBF /* UITabBarItemLenses.swift in Sources */,
 				A70969261D1437B200DB39D3 /* CGSizeLenses.swift in Sources */,
 				A782B4521D2C375A0069D10E /* UITextViewLenses.swift in Sources */,
 				A70969201D1437AD00DB39D3 /* UIButton.swift in Sources */,
 				A709692F1D1437B200DB39D3 /* UIViewLenses.swift in Sources */,
 				A76BAF9E1D5CC48D00BC2483 /* UITraitCollection.swift in Sources */,
+				18027D0E257B3069005B7FBF /* UINavigationBarLenses.swift in Sources */,
 				A70969211D1437AD00DB39D3 /* UIEdgeInsets.swift in Sources */,
 				A747D8E21D353A17004B612D /* NSObject.swift in Sources */,
 				A7013C9F1D538AD100BCEE9C /* WKWebViewLenses.swift in Sources */,
+				18027D20257B3082005B7FBF /* UINavigationItemLenses.swift in Sources */,
 				A709692E1D1437B200DB39D3 /* UIViewControllerLenses.swift in Sources */,
 				A788518C1D6C8C8B00617930 /* UIActivityIndicatorViewLenses.swift in Sources */,
+				18027D05257B3057005B7FBF /* UIBarItemLenses.swift in Sources */,
 				A70969231D1437B200DB39D3 /* CALayerLenses.swift in Sources */,
 				A743813B1D33D49600040A95 /* UIAccessibilityLenses.swift in Sources */,
 				A7D11FCB1D14936700F364FD /* UITableViewControllerLenses.swift in Sources */,
+				18027D17257B3078005B7FBF /* UINavigationControllerLenses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1522,16 +1395,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8023ED2E1E9AC7660044504B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Runes-iOS";
-			targetProxy = 8023ED2D1E9AC7660044504B /* PBXContainerItemProxy */;
-		};
-		8023ED301E9AC76C0044504B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Runes-tvOS";
-			targetProxy = 8023ED2F1E9AC76C0044504B /* PBXContainerItemProxy */;
-		};
 		A70969141D14373400DB39D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A70969071D14373400DB39D3 /* Prelude-UIKit-tvOS */;

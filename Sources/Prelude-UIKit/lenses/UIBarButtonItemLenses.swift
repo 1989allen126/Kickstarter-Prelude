@@ -1,3 +1,13 @@
+//
+//  UIBarButtonItemLenses.swift
+//  Prelude
+//
+//  Created by apple 2020 on 2/21/15.
+//  Copyright © 2020 apple. All rights reserved.
+// #if os(iOS) || os(tvOS) || os(macOS)
+
+#if os(iOS)
+
 import Prelude
 import UIKit
 
@@ -140,3 +150,5 @@ public extension LensHolder where Object: UIBarButtonItemProtocol {
       )
   }
 }
+
+#endif

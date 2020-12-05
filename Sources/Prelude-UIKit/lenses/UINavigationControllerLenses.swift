@@ -1,3 +1,5 @@
+#if os(iOS)
+
 import Prelude
 import UIKit
 
@@ -48,3 +50,5 @@ extension Lens where Whole: UINavigationControllerProtocol, Part == UINavigation
     return Whole.lens.navigationBar..Part.lens.barTintColor
   }
 }
+
+#endif
